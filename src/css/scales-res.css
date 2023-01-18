@@ -12,11 +12,24 @@ html, body {
     padding: 0;
 }
 
-.header .menu-item {
-    padding: 1vw 1vw;
+.header .menu-link {
+    margin: 0;
+    padding: 0;
 }
 
-.header .menu-item .menu-icon {
+.header .menu-link .menu-icon-square {
+    margin: 0;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.header .menu-link .menu-icon-square .menu-icon {
     height: 2vw;
+    width: 2vw;
+}
+
+.header .menu-link .menu-icon-square .icon-line {
     width: 2vw;
 }

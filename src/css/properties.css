@@ -10,6 +10,15 @@
     overflow: hidden;
 }
 
-.header .menu-item {
+.header .menu-link {
     float: right;
+}
+
+.header .menu-link .menu-icon-square {
+    float: top;
+}
+
+.header .menu-link .menu-icon-square .icon-line {
+    float: top;
+    display: block;
 }

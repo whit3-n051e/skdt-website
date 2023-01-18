@@ -9,30 +9,22 @@ const toPercent = (n) => {return String(n) + '%'};
 const header = document.getElementById("header");
 
 if (isMobile) {
-
+    header.style.backgroundColor = "var(--alt-black)"
 } else {
     header.style.width = "auto";
-    // header.style.borderBottomLeftRadius = "1.5vw";
-    header.style.backgroundColor = "transparent";
+    header.style.borderBottomLeftRadius = "1.5vw";
 }
 
-const menuItems = document.getElementsByClassName("menu-item");
+const menuItems = document.getElementsByClassName("menu-icon-square");
 const menuIcons = document.getElementsByClassName("menu-icon");
 
 for (let i = 0; i < menuItems.length; i++) {
-    if (!isMobile) {
-        menuItems[i].style.backgroundColor = "var(--alt-black)";
-    }
     menuItems[i].onmouseover = () => {
         menuItems[i].style.backgroundColor = "var(--alt-white)";
         menuIcons[i].style.filter = "invert(0%)"
     };
     menuItems[i].onmouseout = () => {
-        if (isMobile) {
-            menuItems[i].style.backgroundColor = "transparent";
-        } else {
-            menuItems[i].style.backgroundColor = "var(--alt-black)";
-        }
+        menuItems[i].style.backgroundColor = "var(--alt-black)";
         menuIcons[i].style.filter = "invert(100%)";
     }
 }

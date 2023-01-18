@@ -14,19 +14,23 @@ html, body {
 }
 
 .header {
-    background-color: var(--alt-black);
-}
-
-.header .menu-item {
     background-color: transparent;
-    transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -webkit-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -moz-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -ms-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -o-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-.header .menu-item .menu-icon {
+.header .menu-link {
+    background-color: transparent;
+}
+
+.header .menu-link .menu-icon-square {
+    background-color: var(--alt-black);
+    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -webkit-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -moz-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -ms-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -o-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.header .menu-link .menu-icon-square .menu-icon {
     filter: invert(100%);
     -webkit-filter: invert(100%);
 }
