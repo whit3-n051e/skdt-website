@@ -1,0 +1,15 @@
+.not-hidden {
+    overflow: auto;
+}
+
+.header {
+    position: fixed;
+    text-align: center;
+    float: right;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.header .menu-item {
+    float: right;
+}

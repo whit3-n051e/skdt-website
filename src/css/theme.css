@@ -1,0 +1,32 @@
+:root {
+    --alt-white: #eeeeee;
+    --alt-black: #0c0b0b;
+
+    --dark-gray: #292f33;
+    --light-gray: #66757f;
+
+    --main-color: #f44336;
+    --sec-color: #ffc107;
+}
+
+html, body {
+    font-family: 'Gill Sans', sans-serif
+}
+
+.header {
+    background-color: var(--alt-black);
+}
+
+.header .menu-item {
+    background-color: transparent;
+    transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -webkit-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -moz-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -ms-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -o-transition: background-color .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.header .menu-item .menu-icon {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}

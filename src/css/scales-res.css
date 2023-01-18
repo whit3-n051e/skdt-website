@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    height: 4vw;
+    width: 100%;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.header .menu-item {
+    padding: 1vw 1vw;
+}
+
+.header .menu-item .menu-icon {
+    height: 2vw;
+    width: 2vw;
+}
