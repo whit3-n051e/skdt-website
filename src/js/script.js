@@ -17,14 +17,19 @@ if (isMobile) {
 
 const menuItems = document.getElementsByClassName("menu-icon-square");
 const menuIcons = document.getElementsByClassName("menu-icon");
+const iconLines = document.getElementsByClassName("icon-line");
 
 for (let i = 0; i < menuItems.length; i++) {
     menuItems[i].onmouseover = () => {
         menuItems[i].style.backgroundColor = "var(--alt-white)";
-        menuIcons[i].style.filter = "invert(0%)"
+        menuIcons[i].style.filter = "invert(0%)";
+        iconLines[i].style.width = "2vw";
+        iconLines[i].style.marginLeft = "0vw";
     };
     menuItems[i].onmouseout = () => {
         menuItems[i].style.backgroundColor = "var(--alt-black)";
         menuIcons[i].style.filter = "invert(100%)";
+        iconLines[i].style.width = "0vw";
+        iconLines[i].style.marginLeft = "1vw"
     }
 }

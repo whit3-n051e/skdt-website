@@ -34,3 +34,15 @@ html, body {
     filter: invert(100%);
     -webkit-filter: invert(100%);
 }
+
+.header .menu-link .menu-icon-square .icon-line {
+    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -webkit-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -moz-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -ms-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -o-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.header .header-dragger {
+    background-color: var(--alt-black);
+}

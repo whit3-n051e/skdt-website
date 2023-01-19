@@ -31,5 +31,12 @@ html, body {
 }
 
 .header .menu-link .menu-icon-square .icon-line {
+    width: 0vw;
+    height: 0.75vw;
+    margin-left: 1vw;
+}
+
+.header .header-dragger {
     width: 2vw;
+    height: 4vw;
 }

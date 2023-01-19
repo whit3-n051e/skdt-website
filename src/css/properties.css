@@ -16,12 +16,23 @@
 }
 
 .header .menu-link .menu-icon-square {
-    float: top;
     z-index: 11;
+    overflow: hidden;
+}
+
+.header .menu-link .menu-icon-square .menu-icon {
+    display: block;
+    z-index: 12;
 }
 
 .header .menu-link .menu-icon-square .icon-line {
-    float: top;
+    float: left;
     display: block;
+    z-index: 13;
+}
+
+.header .header-dragger {
     z-index: 11;
+    display: block;
+    float: right;
 }
