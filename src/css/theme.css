@@ -7,42 +7,59 @@
 
     --main-color: #f44336;
     --sec-color: #ffc107;
+
+    --main-trans-pattern: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 html, body {
-    font-family: 'Gill Sans', sans-serif
+    font-family: 'Gill Sans', sans-serif;
 }
 
 .header {
     background-color: transparent;
+    transition: all .5s var(--main-trans-pattern);
+    -webkit-transition: all .5s var(--main-trans-pattern);
+    -moz-transition: all .5s var(--main-trans-pattern);
+    -ms-transition: all .5s var(--main-trans-pattern);
+    -o-transition: all .5s var(--main-trans-pattern);
 }
 
-.header .menu-link {
+.header .header-container .menu-link {
     background-color: transparent;
 }
 
-.header .menu-link .menu-icon-square {
+.header .header-container .menu-link .menu-icon-square {
     background-color: var(--alt-black);
-    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -webkit-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -moz-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -ms-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -o-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all .5s var(--main-trans-pattern);
+    -webkit-transition: all .5s var(--main-trans-pattern);
+    -moz-transition: all .5s var(--main-trans-pattern);
+    -ms-transition: all .5s var(--main-trans-pattern);
+    -o-transition: all .5s var(--main-trans-pattern);
 }
 
-.header .menu-link .menu-icon-square .menu-icon {
+.header .header-container .menu-link .menu-icon-square .menu-icon {
     filter: invert(100%);
     -webkit-filter: invert(100%);
 }
 
-.header .menu-link .menu-icon-square .icon-line {
-    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -webkit-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -moz-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -ms-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -o-transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+.header .header-container .menu-link .menu-icon-square .icon-line {
+    transition: all .5s var(--main-trans-pattern);
+    -webkit-transition: all .5s var(--main-trans-pattern);
+    -moz-transition: all .5s var(--main-trans-pattern);
+    -ms-transition: all .5s var(--main-trans-pattern);
+    -o-transition: all .5s var(--main-trans-pattern);
 }
 
 .header .header-dragger {
-    background-color: var(--alt-black);
+    background-color: var(--light-gray);
+}
+
+#header-dragger-arrow {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    transition: transform .5s var(--main-trans-pattern);
+    -webkit-transition: transform .5s var(--main-trans-pattern);
+    -moz-transition: transform .5s var(--main-trans-pattern);
+    -ms-transition: transform .5s var(--main-trans-pattern);
+    -o-transition: transform .5s var(--main-trans-pattern);
 }

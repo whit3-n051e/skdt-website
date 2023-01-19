@@ -4,20 +4,24 @@ html, body {
 }
 
 .header {
-    height: 4vw;
     width: 100%;
     right: 0;
-    top: 0;
+    top: -4vw;
     margin: 0;
     padding: 0;
 }
 
-.header .menu-link {
+.header-container {
+    right: 0;
+    height: 4vw;
+}
+
+.header .header-container .menu-link {
     margin: 0;
     padding: 0;
 }
 
-.header .menu-link .menu-icon-square {
+.header .header-container .menu-link .menu-icon-square {
     margin: 0;
     padding-top: 1vw;
     padding-bottom: 1vw;
@@ -25,18 +29,28 @@ html, body {
     padding-right: 1vw;
 }
 
-.header .menu-link .menu-icon-square .menu-icon {
+.header .header-container .menu-link .menu-icon-square .menu-icon {
     height: 2vw;
     width: 2vw;
 }
 
-.header .menu-link .menu-icon-square .icon-line {
+.header .header-container .menu-link .menu-icon-square .icon-line {
     width: 0vw;
     height: 0.75vw;
     margin-left: 1vw;
 }
 
 .header .header-dragger {
+    width: 3vw;
+    height: 7vw;
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
+
+#header-dragger-arrow {
+    margin: 0;
+    padding: 0;
+    height: 2vw;
     width: 2vw;
-    height: 4vw;
+    margin-top: 4.5vw;
 }

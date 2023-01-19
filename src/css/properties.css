@@ -1,5 +1,5 @@
-.not-hidden {
-    overflow: auto;
+html, body {
+    position: fixed;
 }
 
 .header {
@@ -7,32 +7,35 @@
     text-align: center;
     float: right;
     z-index: 10;
-    overflow: hidden;
 }
 
-.header .menu-link {
-    float: right;
-    z-index: 15;
-}
-
-.header .menu-link .menu-icon-square {
+.header-container {
     z-index: 11;
     overflow: hidden;
 }
 
-.header .menu-link .menu-icon-square .menu-icon {
+.header .header-container .menu-link {
+    float: right;
+    z-index: 15;
+}
+
+.header .header-container .menu-link .menu-icon-square {
+    z-index: 11;
+    overflow: hidden;
+}
+
+.header .header-container .menu-link .menu-icon-square .menu-icon {
     display: block;
     z-index: 12;
 }
 
-.header .menu-link .menu-icon-square .icon-line {
+.header .header-container .menu-link .menu-icon-square .icon-line {
     float: left;
     display: block;
     z-index: 13;
 }
 
 .header .header-dragger {
-    z-index: 11;
-    display: block;
+    z-index: 0;
     float: right;
 }
