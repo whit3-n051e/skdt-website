@@ -66,10 +66,6 @@ html, body {
 }
 
 #header-dragger-arrow {
-    /*
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
-    */
     transition: transform .5s var(--main-trans-pattern);
     -webkit-transition: transform .5s var(--main-trans-pattern);
     -moz-transition: transform .5s var(--main-trans-pattern);
@@ -79,4 +75,13 @@ html, body {
 
 #header-ender {
     background-color: var(--sec-color);
+}
+
+.link-description {
+    background-color: var(--sec-color);
+    transition: top .5s var(--main-trans-pattern);
+    -webkit-transition: top .5s var(--main-trans-pattern);
+    -moz-transition: top .5s var(--main-trans-pattern);
+    -ms-transition: top .5s var(--main-trans-pattern);
+    -o-transition: top .5s var(--main-trans-pattern);
 }

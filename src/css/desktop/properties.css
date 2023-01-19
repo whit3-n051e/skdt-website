@@ -53,3 +53,10 @@ html, body {
     float: left;
     position: absolute;
 }
+
+.link-description {
+    z-index: 10;
+    float: bottom;
+    position: absolute;
+    display: block;
+}

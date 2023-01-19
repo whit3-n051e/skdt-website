@@ -1,10 +1,11 @@
 html, body {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 .header {
-    width: calc(var(--unit) * 32);
+    height: 0;
     right: 0;
     top: calc(var(--unit) * -4);
     margin: 0;
@@ -70,4 +71,18 @@ html, body {
     top: 0;
     margin: 0;
     padding: 0;
+}
+
+.link-description {
+    height: auto;
+    width: auto;
+    padding-left: calc(var(--unit) * 0.5);
+    padding-right: calc(var(--unit) * 0.5);
+    padding-bottom: calc(var(--unit) * 0.25);
+    font-size: calc(var(--unit) * 1);
+    top: calc(var(--unit) * 2);
+    left: calc(var(--unit) * -29.25);
+    border-bottom-left-radius: calc(var(--unit) * 0.5);
+    border-bottom-right-radius: calc(var(--unit) * 0.5);
+    border-top-right-radius: calc(var(--unit) * 0.5);
 }
