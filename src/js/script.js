@@ -16,7 +16,7 @@ document.documentElement.style.setProperty("--mobile", Number(isMobile));
 // ------------------------------------------------------------------------
 
 const header = document.getElementById("header");
-const headerContainer = document.getElementById("header-container")
+const headerContainer = document.getElementById("header-container");
 const headerDragger = document.getElementById("header-dragger");
 const headerDraggerArrow = document.getElementById("header-dragger-arrow");
 
