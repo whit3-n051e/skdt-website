@@ -5,8 +5,8 @@
     --dark-gray: #292f33;
     --light-gray: #66757f;
 
-    --main-color: #f44336;
-    --sec-color: #ffc107;
+    --main-color: #21314b;
+    --sec-color: #83ba48;
 
     --main-trans-pattern: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -51,7 +51,7 @@ html, body {
 }
 
 .header .header-dragger {
-    background-color: var(--light-gray);
+    background-color: var(--main-color);
 }
 
 #header-dragger-arrow {
