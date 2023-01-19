@@ -1,51 +1,79 @@
+// Some useful functions
 const isMobile = /iphone|ipad|ipod|android/i.test(navigator.userAgent);
 
-const fromPx = (s) => {return Number(s.slice(0, s.length - 2))};
-const toPx = (n) => {return String(n) + 'px'};
+function fromPxVw(s) {return Number(s.slice(0, s.length - 2))};
+function units(n) {return String("calc(var(--unit) *" + n + ")")}
 
-const fromPercent = (s) => {return Number(s.slice(0, s.length - 1))};
-const toPercent = (n) => {return String(n) + '%'};
+function fromPercent (s) {return Number(s.slice(0, s.length - 1))};
+function toPercent(n) {return String(n) + '%'};
 
+// ------------------------------------------------------------------------
+let UIMultiplier = 1;
+if (isMobile) UIMultiplier = 3.1;
+
+document.documentElement.style.setProperty("--unit", UIMultiplier + 'vw');
+document.documentElement.style.setProperty("--mobile", Number(isMobile));
 // ------------------------------------------------------------------------
 
 const header = document.getElementById("header");
 const headerContainer = document.getElementById("header-container")
-const menuItems = document.getElementsByClassName("menu-icon-square");
-const menuIcons = document.getElementsByClassName("menu-icon");
-const iconLines = document.getElementsByClassName("icon-line");
 const headerDragger = document.getElementById("header-dragger");
 const headerDraggerArrow = document.getElementById("header-dragger-arrow");
 
-if (isMobile) {
-    header.style.backgroundColor = "var(--alt-black)"
-} else {
-    header.style.width = "auto";
-    headerContainer.style.borderBottomLeftRadius = "1.5vw";
+const menuBackgrounds = document.getElementsByClassName("menu-icon-white-bg");
+const menuIcons = document.getElementsByClassName("menu-icon");
+const menuLinks = document.getElementsByClassName("menu-link");
+const iconLines = document.getElementsByClassName("icon-line");
 
-    headerDragger.onmouseover = () => {
-        header.style.top = "0vw";
-        headerDraggerArrow.style.transform = "rotate(180deg)";
-    };
-    headerDragger.onmouseout = () => {
-        header.style.top = "-4vw";
-        headerDraggerArrow.style.transform = "rotate(0deg)";
-    };
+const showHeader = () => {
+    header.style.top = 0;
+    headerDraggerArrow.style.transform = "rotate(180deg)"
+}
+
+const hideHeader = () => {
+    header.style.top = units(-4);
+    headerDraggerArrow.style.transform = "rotate(0deg)"
+}
+
+// Header arrow animations
+if (isMobile) {
+    headerDraggerArrow.style.transition = "";
+    headerDragger.style.transition = "";
+    headerDragger.style.height = 0;
+    headerDraggerArrow.style.height = 0;
+    header.style.top = 0;
+} else {
+    headerDragger.onmouseover = () => showHeader();
+    headerDragger.onmouseout = () => hideHeader();
     header.onmouseover = headerDragger.onmouseover;
     header.onmouseout = headerDragger.onmouseout;
 }
 
+const activateLink = (linkNo) => {
+    menuBackgrounds[linkNo].style.height = units(4);
+    menuBackgrounds[linkNo].style.marginTop = units(-4.74);
+    menuIcons[linkNo].style.filter = "invert(0%)";
+    iconLines[linkNo].style.width = units(2);
+    iconLines[linkNo].style.marginLeft = 0;
+}
 
-for (let i = 0; i < menuItems.length; i++) {
-    menuItems[i].onmouseover = () => {
-        menuItems[i].style.backgroundColor = "var(--alt-white)";
-        menuIcons[i].style.filter = "invert(0%)";
-        iconLines[i].style.width = "2vw";
-        iconLines[i].style.marginLeft = "0vw";
-    };
-    menuItems[i].onmouseout = () => {
-        menuItems[i].style.backgroundColor = "var(--alt-black)";
-        menuIcons[i].style.filter = "invert(100%)";
-        iconLines[i].style.width = "0vw";
-        iconLines[i].style.marginLeft = "1vw"
+const deactivateLink = (linkNo) => {
+    menuBackgrounds[linkNo].style.height = 0;
+    menuBackgrounds[linkNo].style.marginTop = units(-0.74);
+    menuIcons[linkNo].style.filter = "invert(100%)";
+    iconLines[linkNo].style.width = 0;
+    iconLines[linkNo].style.marginLeft = units(1);
+}
+
+// Menu links animation
+for (let i = 0; i < menuLinks.length; i++) {
+    if (isMobile) {
+        menuLinks[i].onclick = () => {
+            activateLink(i);
+            deactivateLink(i);
+        }
+    } else {
+        menuLinks[i].onmouseover = () => activateLink(i);
+        menuLinks[i].onmouseout = () => deactivateLink(i);
     }
 }
