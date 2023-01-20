@@ -4,13 +4,29 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+        <!-- Title -->
         <title>Science Design</title>
+
+        <!-- Icon -->
         <link rel="icon" type="image/x-icon" href="assets/icons/logo.ico"/>
-        <link rel="stylesheet" type="text/css" href="src/css/theme.css" id="stylesheetlink-theme"/>
-        <link rel="stylesheet" type="text/css" href="src/css/scales.css" id="stylesheetlink-scales"/>
-        <link rel="stylesheet" type="text/css" href="src/css/properties.css" id="stylesheetlink-properties"/>
+
+        <!-- Global stylesheets -->
+        <link rel="stylesheet" type="text/css" href="src/css/global-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="src/css/global-scales.css"/>
+        <link rel="stylesheet" type="text/css" href="src/css/global-props.css"/>
+
+        <!-- Header stylesheets -->
+        <link rel="stylesheet" type="text/css" href="src/css/header/h-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="src/css/header/h-scales.css"/>
+        <link rel="stylesheet" type="text/css" href="src/css/header/h-props.css"/>
+
+        <!-- Content stylesheets -->
+        <link rel="stylesheet" type="text/css" href="src/css/content/c-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="src/css/content/c-scales.css"/>
+        <link rel="stylesheet" type="text/css" href="src/css/content/c-props.css"/>
     </head>
     <body>
+        <!-- Header div -->
         <div id="header">
             <div id="header-ender"></div>
             <div id="header-dragger">
@@ -24,7 +40,7 @@
                         <img class="menu-icon" src="assets/icons/gallery.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
 
                 <!-- Projects and achievements-->
@@ -33,7 +49,7 @@
                         <img class="menu-icon" src="assets/icons/trophy.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
 
                 <!-- Labs and resources -->
@@ -42,7 +58,7 @@
                         <img class="menu-icon" src="assets/icons/microscope.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
 
                 <!-- Subjects -->
@@ -51,7 +67,7 @@
                         <img class="menu-icon" src="assets/icons/subjects.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
 
                 <!-- Personnel -->
@@ -60,7 +76,7 @@
                         <img class="menu-icon" src="assets/icons/staff.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
 
                 <!-- Features -->
@@ -69,7 +85,7 @@
                         <img class="menu-icon" src="assets/icons/high-priority.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
 
                 <!-- Brief description -->
@@ -78,7 +94,7 @@
                         <img class="menu-icon" src="assets/icons/details.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
 
                 <!-- Home page -->
@@ -87,7 +103,7 @@
                         <img class="menu-icon" src="assets/icons/home.png"/>
                         <img class="icon-line" src="assets/icons/icons-line.png"/>
                     </div>
-                    <div class="menu-icon-white-bg"></div>
+                    <div class="menu-icon-bg"></div>
                 </a>
             </div>
             <div class="link-description">Галерея</div>
@@ -100,6 +116,13 @@
             <div class="link-description">Главная страница</div>
         </div>
 
-        <script src="src/js/script.js"></script>
+        <!-- Content div -->
+        <div id="content">
+
+        </div>
+
+        <!-- Script attachement -->
+        <script src="src/js/header.js"></script>
+        <script src="src/js/content.js"></script>
     </body>
 </html>

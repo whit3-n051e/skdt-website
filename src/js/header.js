@@ -1,5 +1,8 @@
-// Some useful functions
+// Check if using a mobile device
+
 const isMobile = /iphone|ipad|ipod|android/i.test(navigator.userAgent);
+
+// Some useful functions
 
 function fromPxVw(s) {return Number(s.slice(0, s.length - 2))};
 function headerUnits(n) {return String("calc(var(--header-unit) *" + n + ")")}
@@ -7,31 +10,30 @@ function headerUnits(n) {return String("calc(var(--header-unit) *" + n + ")")}
 function fromPercent (s) {return Number(s.slice(0, s.length - 1))};
 function toPercent(n) {return String(n) + '%'};
 
-// Use different measurements for mobile and desktop
+// Using different header measurements for mobile and desktop
+// (Being a genious in responsive web design)
 
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) * 0.01;
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.01;
+let headerUnit = vw;
 
-let unit = Math.max(vw, vh);
-
-const min_unit = 14;
-const max_unit = 30;
+const min_hunit = 14;
+const max_hunit = 30;
 
 const headerLinksNo = 8;
 
 if (isMobile) {
-    unit = vw * 25 / headerLinksNo;
+    headerUnit = vw * 25 / headerLinksNo;
 } else {
-    if (unit < min_unit) unit = min_unit;
-    if (unit > max_unit) unit = max_unit;
+    if (headerUnit < min_hunit) headerUnit = min_hunit;
+    if (headerUnit > max_hunit) headerUnit = max_hunit;
 }
 
-document.documentElement.style.setProperty("--header-unit", unit + 'px');
+document.documentElement.style.setProperty("--header-unit", headerUnit + 'px');
 document.documentElement.style.setProperty("--header-links-no", headerLinksNo)
 document.documentElement.style.setProperty("--mobile", Number(isMobile));
 // ------------------------------------------------------------------------
 
-// Defining animations
+// Defining header elements
 
 const header = document.getElementById("header");
 const headerContainer = document.getElementById("header-container");
@@ -40,10 +42,12 @@ const headerDraggerArrow = document.getElementById("header-dragger-arrow");
 const headerEnder = document.getElementById("header-ender");
 
 const linkDescription = document.getElementsByClassName("link-description");
-const menuBackgrounds = document.getElementsByClassName("menu-icon-white-bg");
+const menuBackgrounds = document.getElementsByClassName("menu-icon-bg");
 const menuIcons = document.getElementsByClassName("menu-icon");
 const menuLinks = document.getElementsByClassName("menu-link");
 const iconLines = document.getElementsByClassName("icon-line");
+
+// Some animation functions
 
 const showHeader = () => {
     header.style.top = 0;
@@ -55,7 +59,29 @@ const hideHeader = () => {
     headerDraggerArrow.style.transform = "rotate(0deg)"
 }
 
-// Main properties for mobile and desktop
+const highlightLink = (linkNo) => {
+    menuBackgrounds[linkNo].style.height = headerUnits(4);
+    menuBackgrounds[linkNo].style.marginTop = headerUnits(-4.74);
+    menuIcons[linkNo].style.filter = "invert(0%)";
+    menuIcons[linkNo].style.scale = '1.2';
+    iconLines[linkNo].style.width = headerUnits(2);
+    iconLines[linkNo].style.marginLeft = 0;
+    if (isMobile) {iconLines[linkNo].style.scale = "1.25 2"} else {iconLines[linkNo].style.scale = '1.25 1'};
+    linkDescription[linkNo].style.top = headerUnits(4);
+}
+
+const unhighlightLink = (linkNo) => {
+    menuBackgrounds[linkNo].style.height = 0;
+    menuBackgrounds[linkNo].style.marginTop = headerUnits(-0.74);
+    menuIcons[linkNo].style.scale = '1';
+    menuIcons[linkNo].style.filter = "invert(100%)";
+    iconLines[linkNo].style.width = 0;
+    iconLines[linkNo].style.marginLeft = headerUnits(1);
+    if (isMobile) {iconLines[linkNo].style.scale = "1 2"} else {iconLines[linkNo].style.scale = '1'};
+    linkDescription[linkNo].style.top = headerUnits(2);
+}
+
+// Header properties and animations for mobile and desktop
 if (isMobile) {
     headerEnder.style.display = "none";
     headerDragger.style.display = "none";
@@ -71,43 +97,23 @@ if (isMobile) {
     header.onmouseout = headerDragger.onmouseout;
 }
 
-const activateLink = (linkNo) => {
-    menuBackgrounds[linkNo].style.height = headerUnits(4);
-    menuBackgrounds[linkNo].style.marginTop = headerUnits(-4.74);
-    menuIcons[linkNo].style.filter = "invert(0%)";
-    menuIcons[linkNo].style.scale = '1.2';
-    iconLines[linkNo].style.width = headerUnits(2);
-    iconLines[linkNo].style.marginLeft = 0;
-    if (isMobile) {iconLines[linkNo].style.scale = "1.25 2"} else {iconLines[linkNo].style.scale = '1.25 1'};
-    linkDescription[linkNo].style.top = headerUnits(4);
-}
-
-const deactivateLink = (linkNo) => {
-    menuBackgrounds[linkNo].style.height = 0;
-    menuBackgrounds[linkNo].style.marginTop = headerUnits(-0.74);
-    menuIcons[linkNo].style.scale = '1';
-    menuIcons[linkNo].style.filter = "invert(100%)";
-    iconLines[linkNo].style.width = 0;
-    iconLines[linkNo].style.marginLeft = headerUnits(1);
-    if (isMobile) {iconLines[linkNo].style.scale = "1 2"} else {iconLines[linkNo].style.scale = '1'};
-    linkDescription[linkNo].style.top = headerUnits(2);
-}
-
+// This is needed only for mobile:
 let activeLinkNo = headerLinksNo - 1;
-if (isMobile) {activateLink(activeLinkNo)}
+if (isMobile) {highlightLink(activeLinkNo)}
 
-// Menu links animation
+
+// Animating the header links
 for (let i = 0; i < menuLinks.length; i++) {
     if (isMobile) {
         menuLinks[i].onclick = () => {
             if (activeLinkNo != -1) {
-                deactivateLink(activeLinkNo);
+                unhighlightLink(activeLinkNo);
             }
             activeLinkNo = i;
-            activateLink(i);
+            highlightLink(i);
         }
     } else {
-        menuLinks[i].onmouseover = () => activateLink(i);
-        menuLinks[i].onmouseout = () => deactivateLink(i);
+        menuLinks[i].onmouseover = () => highlightLink(i);
+        menuLinks[i].onmouseout = () => unhighlightLink(i);
     }
 }

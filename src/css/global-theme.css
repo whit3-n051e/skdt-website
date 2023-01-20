@@ -1,0 +1,17 @@
+:root {
+    --alt-white: #eeeeee;
+    --alt-black: #0c0b0b;
+
+    --dark-gray: #292f33;
+    --light-gray: #66757f;
+
+    --main-color: #21314b;
+    --sec-color: #83ba48;
+
+    --transition-quick: ease-out;
+    --transition-gradual: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+html, body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
