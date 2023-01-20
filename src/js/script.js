@@ -27,8 +27,8 @@ if (isMobile) {
     scalesSheet.href = "src/css/mobile/scales-m.css";
     propertiesSheet.href = "src/css/mobile/properties-m.css";
 } else {
-    if (unit < min_unit) unit = min_vw;
-    if (unit > max_unit) unit = max_vw;
+    if (unit < min_unit) unit = min_unit;
+    if (unit > max_unit) unit = max_unit;
 }
 
 document.documentElement.style.setProperty("--unit", unit + 'px');
@@ -70,10 +70,10 @@ const activateLink = (linkNo) => {
     menuBackgrounds[linkNo].style.height = units(4);
     menuBackgrounds[linkNo].style.marginTop = units(-4.74);
     menuIcons[linkNo].style.filter = "invert(0%)";
-    menuIcons[linkNo].style.scale = '1.15';
+    menuIcons[linkNo].style.scale = '1.2';
     iconLines[linkNo].style.width = units(2);
     iconLines[linkNo].style.marginLeft = 0;
-    iconLines[linkNo].style.scale = '1.25';
+    iconLines[linkNo].style.scale = '1.25 0.5';
     linkDescription[linkNo].style.top = units(4);
 }
 
@@ -84,7 +84,7 @@ const deactivateLink = (linkNo) => {
     menuIcons[linkNo].style.filter = "invert(100%)";
     iconLines[linkNo].style.width = 0;
     iconLines[linkNo].style.marginLeft = units(1);
-    iconLines[linkNo].style.scale = '1';
+    iconLines[linkNo].style.scale = '1 0.5';
     linkDescription[linkNo].style.top = units(2);
 }
 
