@@ -12,7 +12,7 @@
 }
 
 html, body {
-    font-family: 'Gill Sans', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #header {
@@ -79,6 +79,8 @@ html, body {
 
 .link-description {
     background-color: var(--sec-color);
+    color: var(--dark-gray);
+    font-weight: 500;
     transition: top .5s var(--main-trans-pattern);
     -webkit-transition: top .5s var(--main-trans-pattern);
     -moz-transition: top .5s var(--main-trans-pattern);

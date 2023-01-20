@@ -7,15 +7,15 @@ html, body {
 #header {
     height: 0;
     right: 0;
-    top: calc(var(--unit) * -4);
+    top: calc(var(--header-unit) * -4);
     margin: 0;
     padding: 0;
 }
 
 #header-container {
-    width: calc(var(--unit) * 32);
+    width: calc(var(--header-unit) * var(--header-links-no) * 4);
     right: 0;
-    height: calc(var(--unit) * 4);
+    height: calc(var(--header-unit) * 4);
 }
 
 #header-container .menu-link {
@@ -25,50 +25,50 @@ html, body {
 
 #header-container .menu-link .menu-icon-square {
     margin: 0;
-    padding-top: calc(var(--unit) * 1);
-    padding-bottom: calc(var(--unit) * 1);
-    padding-left: calc(var(--unit) * 1);
-    padding-right: calc(var(--unit) * 1);
+    padding-top: calc(var(--header-unit) * 1);
+    padding-bottom: calc(var(--header-unit) * 1);
+    padding-left: calc(var(--header-unit) * 1);
+    padding-right: calc(var(--header-unit) * 1);
 }
 
 #header-container .menu-link .menu-icon-square .menu-icon {
-    height: calc(var(--unit) * 2);
-    width: calc(var(--unit) * 2);
+    height: calc(var(--header-unit) * 2);
+    width: calc(var(--header-unit) * 2);
 }
 
 #header-container .menu-link .menu-icon-square .icon-line {
     width: 0;
-    height: calc(var(--unit) * 0.75);
-    margin-left: calc(var(--unit) * 1);
-    scale: 1 0.5;
+    height: calc(var(--header-unit) * 0.75);
+    margin-left: calc(var(--header-unit) * 1);
+    scale: 1;
 }
 
 #header-dragger {
-    width: calc(var(--unit) * 3);
-    height: calc(var(--unit) * 6.75);
-    border-bottom-left-radius: calc(var(--unit) * 1);
-    border-bottom-right-radius: calc(var(--unit) * 1);
+    width: calc(var(--header-unit) * 3);
+    height: calc(var(--header-unit) * 6.75);
+    border-bottom-left-radius: calc(var(--header-unit) * 1);
+    border-bottom-right-radius: calc(var(--header-unit) * 1);
 }
 
 #header-container .menu-link .menu-icon-white-bg {
-    width: calc(var(--unit) * 4);
+    width: calc(var(--header-unit) * 4);
     height: 0;
-    margin-top: calc(var(--unit) * -0.74);
+    margin-top: calc(var(--header-unit) * -0.74);
     padding: 0;
 }
 
 #header-dragger-arrow {
     margin: 0;
     padding: 0;
-    height: calc(var(--unit) * 2);
-    width: calc(var(--unit) * 2);
-    margin-top: calc(var(--unit) * 4.25);
+    height: calc(var(--header-unit) * 2);
+    width: calc(var(--header-unit) * 2);
+    margin-top: calc(var(--header-unit) * 4.25);
 }
 
 #header-ender {
-    width: calc(var(--unit) * 0.25);
-    height: calc(var(--unit) * 4);
-    right: calc(var(--unit) * 32);
+    width: calc(var(--header-unit) * 0.25);
+    height: calc(var(--header-unit) * 4);
+    right: calc(var(--header-unit) * 32);
     top: 0;
     margin: 0;
     padding: 0;
@@ -77,13 +77,13 @@ html, body {
 .link-description {
     height: auto;
     width: auto;
-    padding-left: calc(var(--unit) * 0.5);
-    padding-right: calc(var(--unit) * 0.5);
-    padding-bottom: calc(var(--unit) * 0.25);
-    font-size: calc(var(--unit) * 1);
-    top: calc(var(--unit) * 2);
-    left: calc(var(--unit) * -29.25);
-    border-bottom-left-radius: calc(var(--unit) * 0.5);
-    border-bottom-right-radius: calc(var(--unit) * 0.5);
-    border-top-right-radius: calc(var(--unit) * 0.5);
+    padding-left: calc(var(--header-unit) * 0.5);
+    padding-right: calc(var(--header-unit) * 0.5);
+    padding-bottom: calc(var(--header-unit) * 0.25);
+    font-size: calc(var(--header-unit) * 1);
+    top: calc(var(--header-unit) * 2);
+    left: calc(var(--header-unit) * -29.25);
+    border-bottom-left-radius: calc(var(--header-unit) * 0.5);
+    border-bottom-right-radius: calc(var(--header-unit) * 0.5);
+    border-top-right-radius: calc(var(--header-unit) * 0.5);
 }
