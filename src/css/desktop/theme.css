@@ -15,7 +15,7 @@ html, body {
     font-family: 'Gill Sans', sans-serif;
 }
 
-.header {
+#header {
     background-color: transparent;
     transition: all .5s var(--main-trans-pattern);
     -webkit-transition: all .5s var(--main-trans-pattern);
@@ -24,15 +24,15 @@ html, body {
     -o-transition: all .5s var(--main-trans-pattern);
 }
 
-.header .header-container .menu-link {
+#header-container .menu-link {
     background-color: transparent;
 }
 
-.header .header-container .menu-link .menu-icon-square {
+#header-container .menu-link .menu-icon-square {
     background-color: var(--dark-gray);
 }
 
-.header .header-container .menu-link .menu-icon-square .menu-icon {
+#header-container .menu-link .menu-icon-square .menu-icon {
     filter: invert(100%);
     -webkit-filter: invert(100%);
     background-color: transparent;
@@ -43,7 +43,7 @@ html, body {
     -o-transition: all .5s var(--main-trans-pattern);
 }
 
-.header .header-container .menu-link .menu-icon-square .icon-line {
+#header-container .menu-link .menu-icon-square .icon-line {
     background-color: transparent;
     transition: all .5s var(--main-trans-pattern);
     -webkit-transition: all .5s var(--main-trans-pattern);
@@ -52,11 +52,11 @@ html, body {
     -o-transition: all .5s var(--main-trans-pattern);
 }
 
-.header .header-dragger {
+#header-dragger {
     background-color: var(--sec-color);
 }
 
-.header .header-container .menu-link .menu-icon-white-bg {
+#header-container .menu-link .menu-icon-white-bg {
     background-color: var(--sec-color);
     transition: all .5s var(--main-trans-pattern);
     -webkit-transition: all .5s var(--main-trans-pattern);

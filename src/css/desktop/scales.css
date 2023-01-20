@@ -4,7 +4,7 @@ html, body {
     overflow: hidden;
 }
 
-.header {
+#header {
     height: 0;
     right: 0;
     top: calc(var(--unit) * -4);
@@ -12,18 +12,18 @@ html, body {
     padding: 0;
 }
 
-.header-container {
+#header-container {
     width: calc(var(--unit) * 32);
     right: 0;
     height: calc(var(--unit) * 4);
 }
 
-.header .header-container .menu-link {
+#header-container .menu-link {
     margin: 0;
     padding: 0;
 }
 
-.header .header-container .menu-link .menu-icon-square {
+#header-container .menu-link .menu-icon-square {
     margin: 0;
     padding-top: calc(var(--unit) * 1);
     padding-bottom: calc(var(--unit) * 1);
@@ -31,25 +31,25 @@ html, body {
     padding-right: calc(var(--unit) * 1);
 }
 
-.header .header-container .menu-link .menu-icon-square .menu-icon {
+#header-container .menu-link .menu-icon-square .menu-icon {
     height: calc(var(--unit) * 2);
     width: calc(var(--unit) * 2);
 }
 
-.header .header-container .menu-link .menu-icon-square .icon-line {
+#header-container .menu-link .menu-icon-square .icon-line {
     width: 0;
     height: calc(var(--unit) * 0.75);
     margin-left: calc(var(--unit) * 1);
 }
 
-.header .header-dragger {
+#header-dragger {
     width: calc(var(--unit) * 3);
     height: calc(var(--unit) * 6.75);
     border-bottom-left-radius: calc(var(--unit) * 1);
     border-bottom-right-radius: calc(var(--unit) * 1);
 }
 
-.header .header-container .menu-link .menu-icon-white-bg {
+#header-container .menu-link .menu-icon-white-bg {
     width: calc(var(--unit) * 4);
     height: 0;
     margin-top: calc(var(--unit) * -0.74);

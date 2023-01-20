@@ -2,47 +2,47 @@ html, body {
     position: fixed;
 }
 
-.header {
+#header {
     position: fixed;
     text-align: center;
     float: right;
     z-index: 10;
 }
 
-.header .header-container {
+#header-container {
     z-index: 11;
     overflow: hidden;
     display: block;
     position: absolute;
 }
 
-.header .header-container .menu-link {
+#header-container .menu-link {
     float: right;
     z-index: 20;
 }
 
-.header .header-container .menu-link .menu-icon-square {
+#header-container .menu-link .menu-icon-square {
     z-index: 12;
     overflow: hidden;
 }
 
-.header .header-container .menu-link .menu-icon-square .menu-icon {
+#header-container .menu-link .menu-icon-square .menu-icon {
     display: block;
     z-index: 14;
 }
 
-.header .header-container .menu-link .menu-icon-square .icon-line {
+#header-container .menu-link .menu-icon-square .icon-line {
     float: left;
     display: block;
     z-index: 15;
 }
 
-.header .header-container .menu-link .menu-icon-white-bg {
+#header-container .menu-link .menu-icon-white-bg {
     z-index: 13;
     float: top;
 }
 
-.header .header-dragger {
+#header-dragger {
     z-index: 10;
     float: right;
     position: relative;

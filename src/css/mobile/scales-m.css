@@ -3,3 +3,7 @@ html, body {
     width: 100%;
     overflow: hidden;
 }
+
+#header {
+    visibility: hidden;
+}
