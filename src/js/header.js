@@ -18,6 +18,7 @@ document.documentElement.style.setProperty("--header-links-no", headerLinksNo);
 // ------------------------------------------------------------------------
 // Some animation functions
 
+// Header animation
 const showHeader = () => {
     header.style.top = 0;
     headerDraggerArrow.style.transform = "rotate(180deg)"
@@ -27,7 +28,8 @@ const hideHeader = () => {
     header.style.top = headerUnits(-4);
     headerDraggerArrow.style.transform = "rotate(0deg)"
 };
-
+//========================================
+// Link background animation
 const liftLinkBg = (linkNo) => {
     menuBackgrounds[linkNo].style.height = headerUnits(4);
     menuBackgrounds[linkNo].style.marginTop = headerUnits(-4.74);
@@ -37,7 +39,8 @@ const releaseLinkBg = (linkNo) => {
     menuBackgrounds[linkNo].style.height = 0;
     menuBackgrounds[linkNo].style.marginTop = headerUnits(-0.74);
 };
-
+//========================================
+// Link icon line animation
 const retractIconLine = (linkNo) => {
     iconLines[linkNo].style.width = headerUnits(2);
     iconLines[linkNo].style.marginLeft = 0;
@@ -57,7 +60,8 @@ const shrinkIconLine = (linkNo) => {
         iconLines[linkNo].style.scale = '1.5'
     };
 };
-
+//========================================
+// Link description animation
 const revealLinkDescription = (linkNo) => {
     linkDescription[linkNo].style.top = headerUnits(4);
 };
@@ -65,7 +69,8 @@ const revealLinkDescription = (linkNo) => {
 const hideLinkDescription = (linkNo) => {
     linkDescription[linkNo].style.top = headerUnits(2);
 };
-
+//========================================
+// Menu icon animation
 const enlargenMenuIcon = (linkNo) => {
     menuIcons[linkNo].style.scale = '1.2';
 };
@@ -73,15 +78,23 @@ const enlargenMenuIcon = (linkNo) => {
 const shrinkMenuIcon = (linkNo) => {
     menuIcons[linkNo].style.scale = '1';
 };
+//========================================
+// -----
+// Composite animation functions:
 
 const linkHoverAnimation = (linkNo) => {
     liftLinkBg(linkNo);
     retractIconLine(linkNo);
     revealLinkDescription(linkNo);
     enlargenMenuIcon(linkNo);
+
+    // Make icons and their lines turn black:
     menuIcons[linkNo].style.filter = "invert(0%)";
     iconLines[linkNo].style.filter = "invert(0%)";
-    iconLines[linkNo].style.transition = "filter .5s cubic-bezier(0, 1, 0, 1), margin .5s var(--transition-gradual), width .5s var(--transition-gradual)"
+
+    // Alter the line's transition pattern so it
+    // turns black as the link background starts covering it:
+    iconLines[linkNo].style.transition = "filter .5s cubic-bezier(0, 1, 0, 1), margin .5s var(--transition-gradual), width .5s var(--transition-gradual)";
 };
 
 const linkMouseOutAnimation = (linkNo) => {
@@ -89,9 +102,14 @@ const linkMouseOutAnimation = (linkNo) => {
     if (linkNo != activeLinkNo) shrinkIconLine(linkNo);
     hideLinkDescription(linkNo);
     shrinkMenuIcon(linkNo);
+
+    // Make icons and their lines turn white:
     menuIcons[linkNo].style.filter = "invert(100%)";
     iconLines[linkNo].style.filter = "invert(100%)";
-    iconLines[linkNo].style.transition = "all .5s var(--transition-gradual)"
+
+    // Alter the line's transition pattern so it
+    // turns white when the link background no longer covers it:
+    iconLines[linkNo].style.transition = "filter .5s cubic-bezier(1, 0, 0, 0), margin .5s var(--transition-gradual), width .5s var(--transition-gradual)"
 };
 
 const deselectLink = (linkNo) => {
@@ -104,8 +122,7 @@ const selectLink = (linkNo) => {
     //=====================
     retractIconLine(linkNo);
 }
-
-// ---------------------------------
+//========================================
 // Actually animating stuff
 
 // Animating header
