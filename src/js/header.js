@@ -108,7 +108,7 @@ const linkMouseOutAnimation = (linkNo) => {
     iconLines[linkNo].style.filter = "invert(100%)";
 
     // Alter the line's transition pattern so it
-    // turns white when the link background no longer covers it:
+    // turns white as the link background stops covering it:
     iconLines[linkNo].style.transition = "filter .5s cubic-bezier(1, 0, 0, 0), margin .5s var(--transition-gradual), width .5s var(--transition-gradual)"
 };
 
