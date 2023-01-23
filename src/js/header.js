@@ -21,12 +21,14 @@ document.documentElement.style.setProperty("--header-links-no", headerLinksNo);
 // Header animation
 const showHeader = () => {
     header.style.top = 0;
-    headerDraggerArrow.style.transform = "rotate(180deg)"
+    headerDraggerArrow.style.transform = "rotate(180deg)";
+    headerContainer.style.boxShadow = "0px 0px 5px black";
 };
 
 const hideHeader = () => {
     header.style.top = headerUnits(-4);
-    headerDraggerArrow.style.transform = "rotate(0deg)"
+    headerDraggerArrow.style.transform = "rotate(0deg)";
+    headerContainer.style.boxShadow = "";
 };
 //========================================
 // Link background animation

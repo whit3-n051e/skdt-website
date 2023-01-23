@@ -7,6 +7,15 @@
     -o-transition: all .5s var(--transition-gradual);
 }
 
+#header-container {
+    background-color: transparent;
+    transition: box-shadow .5s var(--transition-gradual);
+    -webkit-transition: box-shadow .5s var(--transition-gradual);
+    -moz-transition: box-shadow .5s var(--transition-gradual);
+    -ms-transition: box-shadow .5s var(--transition-gradual);
+    -o-transition: box-shadow .5s var(--transition-gradual);
+}
+
 #header-container .menu-link {
     background-color: transparent;
 }
@@ -53,6 +62,7 @@
     -moz-transition: all .5s var(--transition-quick);
     -ms-transition: all .5s var(--transition-quick);
     -o-transition: all .5s var(--transition-quick);
+    box-shadow: 0px 0px 5px black;
 }
 
 #header-dragger-arrow {
