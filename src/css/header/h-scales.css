@@ -34,7 +34,7 @@
     width: 0;
     height: calc(var(--header-unit) * 0.75);
     margin-left: calc(var(--header-unit) * 1);
-    scale: 1;
+    scale: 1.5 1.5;
 }
 
 #header-dragger {
